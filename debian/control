@@ -1,0 +1,34 @@
+Source: libsub-exporter-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Damyan Ivanov <dmn@debian.org>,
+           Ansgar Burchardt <ansgar@debian.org>,
+           gregor herrmann <gregoa@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: libdata-optlist-perl <!nocheck>,
+                     libsub-install-perl <!nocheck>,
+                     perl
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libsub-exporter-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libsub-exporter-perl.git
+Homepage: https://metacpan.org/release/Sub-Exporter
+Rules-Requires-Root: no
+
+Package: libsub-exporter-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libdata-optlist-perl,
+         libsub-install-perl
+Description: sophisticated exporter for custom-built routines
+ When you use a perl module, first it is "required" function used, then its
+ import method is called.
+ .
+ Sub::Exporter provides a sophisticated alternative to Exporter.pm.  It allows
+ for renaming, currying/sub-generation etc.
+ .
+ Sub::Exporter builds a custom exporter which can then be installed into your
+ module. It builds this method based on configuration passed to its
+ setup_exporter method.
